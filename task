@@ -1,0 +1,41 @@
+  1.create a table student with values (id,name, mobile_no,batch_name)
+The output should be Student is from batch_name by using concatenation operation 
+
+ANSWER:
+CREATE TABLE student (
+    id INT,
+    name VARCHAR(50),
+    mobile_no VARCHAR(15),
+    batch_name VARCHAR(50)
+);
+INSERT INTO student (id, name, mobile_no, batch_name)
+VALUES
+(1, 'Akhila', '9876543210', 'Batch A'),
+(2, 'Veda', '8765432109', 'Batch B'),
+(3, 'Durga', '7654321098', 'Batch C'),
+(4,'Ankitha','8097654321','Batch D');
+SELECT CONCAT(name, ' is from ', batch_name) AS result
+FROM student;
+
+Output:
+
+result                                                                                                       
+-------------------------------------------------------------------------------------------------------------
+Akhila is from Batch A                                                                                       
+Veda is from Batch B                                                                                         
+Durga is from Batch C                                                                                        
+Ankitha is from Batch D
+
+2.select name from the table that start with given character(any char you can take as example ) using like operation
+
+ANSWER:
+
+SELECT name 
+FROM student
+WHERE name LIKE 'A%';
+
+Output:
+name                                              
+--------------------------------------------------
+Akhila                                            
+Ankitha  
